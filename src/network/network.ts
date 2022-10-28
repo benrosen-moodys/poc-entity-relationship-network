@@ -2,6 +2,9 @@ import { Identified } from "identified";
 import { Entity } from "entity";
 import { Relationship } from "relationship";
 
+/**
+ * An index of {@link Entity} and {@link Relationship} instances.
+ */
 export interface Network extends Identified {
   entities: {
     byEntityId: Record<Entity[keyof Identified], Entity>;
