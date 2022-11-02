@@ -8,10 +8,16 @@ import { Relationship } from "relationship";
 export interface Network extends Identified {
   entities: {
     byEntityId: Record<Entity[keyof Identified], Entity>;
-    byRelationshipId: Record<Relationship[keyof Identified], Entity>;
+    byRelationshipId: Record<
+      Relationship[keyof Identified],
+      Entity[keyof Identified][]
+    >;
   };
   relationships: {
-    byEntityId: Record<Entity[keyof Identified], Relationship>;
+    byEntityId: Record<
+      Entity[keyof Identified],
+      Relationship[keyof Identified][]
+    >;
     byRelationshipId: Record<Relationship[keyof Identified], Relationship>;
   };
 }
